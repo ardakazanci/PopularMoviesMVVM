@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
+    defaultConfig {
+        applicationId "com.ardakazanci.popularmoviesmvvm"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    // DataBinding Aktif halde.
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.appcompat:appcompat:$versions.appcompat"
+    implementation "androidx.core:core-ktx:$versions.ktx"
+
+    // Support Libs
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintlayout"
+    implementation "com.google.android.material:material:$versions.material"
+    implementation "androidx.recyclerview:recyclerview:$versions.recyclerview"
+
+    // Retrofit - Gson Lib
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+
+    // Stetho
+    implementation "com.facebook.stetho:stetho:$versions.stetho"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$versions.glide"
+    kapt "com.github.bumptech.glide:compiler:$versions.glide"
+
+    // OkHttp
+    implementation "com.squareup.okhttp3:okhttp:$versions.okhttp"
+
+    // AAC
+    implementation "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+    implementation "androidx.lifecycle:lifecycle-runtime:$versions.lifecycle"
+    implementation "androidx.room:room-runtime:$versions.room"
+    kapt "androidx.room:room-compiler:$versions.room"
+
+
+}
