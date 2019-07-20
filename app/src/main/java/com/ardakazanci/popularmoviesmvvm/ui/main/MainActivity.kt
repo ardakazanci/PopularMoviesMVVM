@@ -1,7 +1,8 @@
-package com.ardakazanci.popularmoviesmvvm
+package com.ardakazanci.popularmoviesmvvm.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ardakazanci.popularmoviesmvvm.R
 
 class MainActivity : AppCompatActivity() {
 
